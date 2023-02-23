@@ -28,9 +28,9 @@ import static org.junit.Assert.assertNotNull;
     @Test
     @Order(2)
      void TestGetCategories() {
-
         List<Categorie> categories = categorieService.retrieveAllCategories();
         assertThat(categories).isNotNull();
+
     }
     @Test
     @Order(3)

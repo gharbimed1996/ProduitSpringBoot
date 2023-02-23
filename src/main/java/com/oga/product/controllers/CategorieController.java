@@ -51,7 +51,6 @@ public class CategorieController {
     @GetMapping("/retrieve-all-categories")
     @ResponseBody
     public List<Categorie> retrieveAllCategories() {
-
         return categorieService.retrieveAllCategories();
     }
     @GetMapping("/search")
