@@ -43,7 +43,7 @@ pipeline {
       stage('Build docker image'){
                           steps{
                                script{
-                                   bat 'docker build -t gharbi19/product.jar .'
+                                   bat 'docker build -t product.jar .'
                                }
                           }
               }
@@ -58,7 +58,7 @@ pipeline {
 
                            steps {
                                 bat 'echo "Docker is pushing ...."'
-                                bat 'docker push gharbi19/product.jar'
+                                bat 'docker push product.jar'
                            }
               }
     }
