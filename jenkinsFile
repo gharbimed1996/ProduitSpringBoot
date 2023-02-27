@@ -39,7 +39,7 @@ pipeline {
                        bat 'mvn sonar:sonar  -Dsonar.projectKey=sonarproject  -Dsonar.host.url=http://localhost:9000    -Dsonar.login=sqp_26248c3256bc78a69330c1f9ac89b1413a79055a'
                    }
                }
-      }
+
       stage('Build docker image'){
                           steps{
                                script{
@@ -61,4 +61,4 @@ pipeline {
                                 bat 'docker push gharbi19/product.jar'
                            }
               }
-    }
+    } }
