@@ -40,4 +40,25 @@ pipeline {
                    }
                }
       }
+      stage('Build docker image'){
+                          steps{
+                               script{
+                                   bat 'docker build -t gharbi19/product.jar .'
+                               }
+                          }
+              }
+              stage('Docker login') {
+
+                           steps {
+                                bat 'echo "login Docker ...."'
+                                bat 'docker login -u gharbi19 -p kizou1996'
+                           }
+              }
+              stage('Docker push') {
+
+                           steps {
+                                bat 'echo "Docker is pushing ...."'
+                                bat 'docker push gharbi19/product.jar'
+                           }
+              }
     }
