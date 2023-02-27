@@ -6,7 +6,7 @@ pipeline {
                 checkout([
                     $class: 'GitSCM',
                     branches: [[name: 'master']],
-                    userRemoteConfigs: [[url: ' https://https://github.com/gharbimed1996/ProduitSpringBoot.git']]
+                    userRemoteConfigs: [[url: ' https://github.com/gharbimed1996/ProduitSpringBoot.git']]
                 ])
             }
         }
