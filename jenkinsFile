@@ -13,27 +13,31 @@ pipeline {
 
         stage('MVN CLEAN') {
             steps {
-                sh 'mvn clean'
+                bat 'mvn clean'
             }
         }
 
         stage('MVN COMPILE') {
             steps {
-                sh 'mvn compile'
+                bat 'mvn compile'
             }
         }
 
         stage('MVN PACKAGE') {
             steps {
-                sh 'mvn package'
+                bat 'mvn package'
             }
         }
 
         stage('MVN TEST') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
-
+       stage('MVN SONARQUBE') {
+                   steps {
+                       bat 'mvn sonar:sonar  -Dsonar.projectKey=sonarproject  -Dsonar.host.url=http://localhost:9000    -Dsonar.login=sqp_26248c3256bc78a69330c1f9ac89b1413a79055a'
+                   }
+               }
       }
     }
